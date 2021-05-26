@@ -50,7 +50,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="Course.cs">
       <DependentUpon>SAT.tt</DependentUpon>
     </Compile>
@@ -73,6 +72,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SAT.edmx</DependentUpon>
     </Compile>
+    <Compile Include="SATMetadata\SATMetadata.cs" />
     <Compile Include="ScheduledClass.cs">
       <DependentUpon>SAT.tt</DependentUpon>
     </Compile>

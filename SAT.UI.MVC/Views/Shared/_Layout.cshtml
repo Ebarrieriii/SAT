@@ -38,12 +38,12 @@
 
             <nav class="nav-menu d-none d-lg-block">
                 <ul>
-                    <li class="active"><a href="@Url.Action("Index", "Home")">Home</a></li>
-                    <li><a href="@Url.Action("Index", "Course")">Courses</a></li>
-                    <li><a href="@Url.Action("Index", "Enrollment")">Enrollments</a></li>
-                    <li><a href="@Url.Action("Index", "Class")">Classes</a></li>
-                    <li><a href="@Url.Action("Index", "Student")">Students</a></li>
-                    <li><a href="@Url.Action("Index", "Status")">Student Status</a></li>
+                    <li><a href="@Url.Action("Index", "Home")">Home</a></li>
+                    <li><a href="@Url.Action("Index", "Courses")">Courses</a></li>
+                    <li><a href="@Url.Action("Index", "Enrollments")">Enrollments</a></li>
+                    <li><a href="@Url.Action("Index", "ScheduledClassStatus")">Classes</a></li>
+                    <li><a href="@Url.Action("Index", "Students")">Students</a></li>
+                    <li><a href="@Url.Action("Index", "StudentStatus")">Student Status</a></li>
                     <li><a href="contact.html">Contact</a></li>
 
                 </ul>
@@ -140,6 +140,18 @@
     <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
     @Scripts.Render("~/bundles/template")
+
+    <script>
+        $(function () {
+            $('.navbar-nav > li a').each(function () {
+                if ($(this).attr('href') == window.location.pathname) {
+                    $(this).addClass('active');
+                }
+            });
+        });
+    </script>
+
+    @RenderSection("scripts", required: false)
 
 </body>
 
