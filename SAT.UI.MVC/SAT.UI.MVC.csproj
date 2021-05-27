@@ -174,6 +174,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\RolesAdminController.cs" />
+    <Compile Include="Controllers\ScheduledClassesController.cs" />
     <Compile Include="Controllers\ScheduledClassStatusController.cs" />
     <Compile Include="Controllers\StudentsController.cs" />
     <Compile Include="Controllers\StudentStatusController.cs" />
@@ -183,12 +184,14 @@
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AdminViewModel.cs" />
+    <Compile Include="Models\ContactViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\assets\css\custom.css" />
     <Content Include="Content\assets\css\style.css" />
     <Content Include="Content\assets\img\about.jpg" />
     <Content Include="Content\assets\img\apple-touch-icon.png" />
@@ -430,6 +433,7 @@
     <Content Include="Content\assets\vendor\remixicon\remixicon.ttf" />
     <Content Include="Content\assets\vendor\remixicon\remixicon.woff" />
     <Content Include="Content\assets\vendor\remixicon\remixicon.woff2" />
+    <Content Include="Configs\AppSecretKeys.config" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -455,7 +459,6 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
@@ -522,11 +525,6 @@
     <Content Include="Views\Courses\Details.cshtml" />
     <Content Include="Views\Courses\Edit.cshtml" />
     <Content Include="Views\Courses\Index.cshtml" />
-    <Content Include="Views\Enrollments\Create.cshtml" />
-    <Content Include="Views\Enrollments\Delete.cshtml" />
-    <Content Include="Views\Enrollments\Details.cshtml" />
-    <Content Include="Views\Enrollments\Edit.cshtml" />
-    <Content Include="Views\Enrollments\Index.cshtml" />
     <Content Include="Views\StudentStatus\Create.cshtml" />
     <Content Include="Views\StudentStatus\Delete.cshtml" />
     <Content Include="Views\StudentStatus\Details.cshtml" />
@@ -537,6 +535,19 @@
     <Content Include="Views\ScheduledClassStatus\Details.cshtml" />
     <Content Include="Views\ScheduledClassStatus\Edit.cshtml" />
     <Content Include="Views\ScheduledClassStatus\Index.cshtml" />
+    <Content Include="Views\Shared\_BannerPartial.cshtml" />
+    <Content Include="Views\ScheduledClasses\Create.cshtml" />
+    <Content Include="Views\ScheduledClasses\Delete.cshtml" />
+    <Content Include="Views\ScheduledClasses\Details.cshtml" />
+    <Content Include="Views\ScheduledClasses\Edit.cshtml" />
+    <Content Include="Views\ScheduledClasses\Index.cshtml" />
+    <Content Include="Views\Enrollments\Create.cshtml" />
+    <Content Include="Views\Enrollments\Delete.cshtml" />
+    <Content Include="Views\Enrollments\Details.cshtml" />
+    <Content Include="Views\Enrollments\Edit.cshtml" />
+    <Content Include="Views\Enrollments\Index.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\EmailConfirmation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

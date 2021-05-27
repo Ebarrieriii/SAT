@@ -9,7 +9,7 @@ namespace SAT.DATA.EF
 {
     public class StudentMetadata
     {
-
+        [Display(Name = "Student ID")]
         public int StudentId { get; set; }
 
         [StringLength(20, ErrorMessage = "value must be 20 characters or less")]
@@ -83,6 +83,7 @@ namespace SAT.DATA.EF
 
     public class CourseMetadata 
     {
+        [Display(Name = "Course")]
         public int CourseId { get; set; }
 
         [StringLength(50, ErrorMessage = "value must be 50 characters or less")]
@@ -109,7 +110,6 @@ namespace SAT.DATA.EF
         [UIHint("MultilineText")]
         public string Notes { get; set; }
 
-        [Range(0,1)]
         [Required]
         [Display(Name = "Is Active?")]
         public bool IsActive { get; set; }
@@ -168,20 +168,27 @@ namespace SAT.DATA.EF
     {
         public int EnrollmentId { get; set; }
 
-        [Range(0, int.MaxValue)]
+
         [Required(ErrorMessage = "* Student ID is required")]
         [Display(Name = "Student ID")]
         public int StudentId { get; set; }
 
-        [Range(0, int.MaxValue)]
+
         [Required(ErrorMessage = "* Student Class ID is required")]
-        [Display(Name = "Student Class ID")]
+        [Display(Name = "Scheduled Class ID")]
         public int ScheduledClassId { get; set; }
 
         [DisplayFormat(DataFormatString = "{0:d}", ApplyFormatInEditMode = true, NullDisplayText = "[-N/A-]")]
         [Required]
         [Display(Name = "Enrollment Date")]
         public System.DateTime EnrollmentDate { get; set; }
+
+        [Range(0, int.MaxValue)]
+        [Required(ErrorMessage = "Scheduled Class is required")]
+        public virtual ScheduledClass ScheduledClass { get; set; }
+
+        [Required]
+        public virtual Student Student { get; set; }
 
     }
 

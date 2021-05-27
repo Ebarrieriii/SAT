@@ -8,6 +8,8 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+
+
 body {
   font-family: "Open Sans", sans-serif;
   color: #4d4643;
@@ -132,6 +134,8 @@ h1, h2, h3, h4, h5, h6 {
 .nav-menu a:hover, .nav-menu .active > a, .nav-menu li:hover > a {
   color: #1bbd36;
 }
+
+
 
 .nav-menu .drop-down ul {
   display: block;
@@ -2240,3 +2244,4 @@ section {
   color: #fff;
   text-decoration: none;
 }
+
