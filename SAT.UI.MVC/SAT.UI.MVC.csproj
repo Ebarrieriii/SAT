@@ -195,6 +195,7 @@
     <Content Include="Content\assets\css\style.css" />
     <Content Include="Content\assets\img\about.jpg" />
     <Content Include="Content\assets\img\apple-touch-icon.png" />
+    <Content Include="Content\assets\img\ar-W0Z54y0L2Ek-unsplash.jpg" />
     <Content Include="Content\assets\img\blog-1.jpg" />
     <Content Include="Content\assets\img\blog-2.jpg" />
     <Content Include="Content\assets\img\blog-3.jpg" />
@@ -548,6 +549,7 @@
     <Content Include="Views\Enrollments\Index.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\EmailConfirmation.cshtml" />
+    <Content Include="Views\StudentStatus\SSGrid.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

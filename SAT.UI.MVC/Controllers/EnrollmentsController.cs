@@ -39,7 +39,7 @@ namespace SAT.UI.MVC.Controllers
         // GET: Enrollments/Create
         public ActionResult Create()
         {
-            ViewBag.ScheduledClassId = new SelectList(db.ScheduledClasses, "ScheduledClassId", "CourseId");
+            ViewBag.ScheduledClassId = new SelectList(db.ScheduledClasses, "ScheduledClassId", "Desc");
             ViewBag.StudentId = new SelectList(db.Students, "StudentId", "FirstName");
             return View();
         }
@@ -58,7 +58,7 @@ namespace SAT.UI.MVC.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.ScheduledClassId = new SelectList(db.ScheduledClasses, "ScheduledClassId", "CourseId", enrollment.ScheduledClassId);
+            ViewBag.ScheduledClassId = new SelectList(db.ScheduledClasses, "ScheduledClassId", "Desc", enrollment.ScheduledClassId);
             ViewBag.StudentId = new SelectList(db.Students, "StudentId", "FirstName", enrollment.StudentId);
             return View(enrollment);
         }
@@ -75,7 +75,7 @@ namespace SAT.UI.MVC.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.ScheduledClassId = new SelectList(db.ScheduledClasses, "ScheduledClassId", "CourseId", enrollment.ScheduledClassId);
+            ViewBag.ScheduledClassId = new SelectList(db.ScheduledClasses, "ScheduledClassId", "Desc", enrollment.ScheduledClassId);
             ViewBag.StudentId = new SelectList(db.Students, "StudentId", "FirstName", enrollment.StudentId);
             return View(enrollment);
         }
@@ -93,7 +93,7 @@ namespace SAT.UI.MVC.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.ScheduledClassId = new SelectList(db.ScheduledClasses, "ScheduledClassId", "CourseId", enrollment.ScheduledClassId);
+            ViewBag.ScheduledClassId = new SelectList(db.ScheduledClasses, "ScheduledClassId", "Desc", enrollment.ScheduledClassId);
             ViewBag.StudentId = new SelectList(db.Students, "StudentId", "FirstName", enrollment.StudentId);
             return View(enrollment);
         }

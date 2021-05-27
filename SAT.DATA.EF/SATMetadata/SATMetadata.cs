@@ -57,7 +57,10 @@ namespace SAT.DATA.EF
     [MetadataType(typeof(StudentMetadata))]
     public partial class Student
     {
-
+        public string FullName
+        {
+            get { return FirstName + " " + LastName; }
+        }
     }
 
     public class StudentStatusMetadata
@@ -161,7 +164,7 @@ namespace SAT.DATA.EF
     [MetadataType(typeof(ScheduledClassMetadata))]
     public partial class ScheduledClass
     {
-
+        public string Desc { get { return StartDate + ", " + CourseId + ", " + Location + ". "; } }
     }
 
     public class EnrollmentMetadata

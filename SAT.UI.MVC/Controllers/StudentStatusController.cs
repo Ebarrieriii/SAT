@@ -123,5 +123,13 @@ namespace SAT.UI.MVC.Controllers
             }
             base.Dispose(disposing);
         }
+
+        public ActionResult SSGrid()
+        {
+            
+            List < StudentStatus> ss = db.StudentStatuses.Include(s => s.Students).ToList();
+
+            return View(ss);
+        }
     }
 }
