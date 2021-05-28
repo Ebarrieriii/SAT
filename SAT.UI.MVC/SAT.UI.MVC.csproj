@@ -302,7 +302,7 @@
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Configs\Connections.config" />
+    <Content Include="configs\Connections.config" />
     <Content Include="_Archive\about.html" />
     <Content Include="_Archive\assets\css\style.css" />
     <Content Include="_Archive\assets\img\about.jpg" />
@@ -438,7 +438,7 @@
     <Content Include="Content\assets\vendor\remixicon\remixicon.ttf" />
     <Content Include="Content\assets\vendor\remixicon\remixicon.woff" />
     <Content Include="Content\assets\vendor\remixicon\remixicon.woff2" />
-    <Content Include="Configs\AppSecretKeys.config" />
+    <Content Include="configs\AppSecretKeys.config" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />

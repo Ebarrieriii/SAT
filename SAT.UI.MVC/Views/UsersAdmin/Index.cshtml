@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<SAT.UI.MVC.Models.ApplicationUser>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Users";
 }
 
-<h2>Index</h2>
+@Html.Partial("_BannerPartial")
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New", "Create", null, new { @class = "mt-2 btn btn-primary" })
 </p>
 <table class="table">
     <tr>

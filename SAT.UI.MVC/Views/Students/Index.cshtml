@@ -79,21 +79,24 @@
                 @Html.DisplayFor(modelItem => item.StudentStatus.SSName)
             </td>
             <td>
-                <a href="@Url.Action("Edit", "Courses", new { id=item.StudentId })"><i class="fas fa-edit"></i></a>
+
+                @if (Request.IsAuthenticated && User.IsInRole("Admin"))
+                {
+                    <a href="@Url.Action("Edit", "Courses", new { id = item.StudentId })"><i class="fas fa-edit"></i></a>
+
+                    <br />
+                }
+                <a href="@Url.Action("Details", "Students", new { id=item.StudentId })"><i class="fas fa-info-circle"></i></a>
 
                 <br />
 
                 @if (Request.IsAuthenticated && User.IsInRole("Admin"))
                 {
-                    <a href="@Url.Action("Details", "Students", new { id=item.StudentId })"><i class="fas fa-info-circle"></i></a>
-
-                    <br />
-
-                    <a href="@Url.Action("Delete", "Students", new { id=item.StudentId })">
+                    <a href="@Url.Action("Delete", "Students", new { id = item.StudentId })">
                         <i class="fas fa-trash-alt"></i>
                     </a>
                 }
-            </td>
+                </td>
         </tr>
     }
 

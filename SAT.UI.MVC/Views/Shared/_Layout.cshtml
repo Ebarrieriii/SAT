@@ -57,7 +57,7 @@
 
         </div>
     </header><!-- End Header -->
-
+    
     <div id="main" class="section">
         <div class="container">
             <div>
@@ -171,12 +171,12 @@
 
         @* Admin navigation *@
         <div id="admin-nav" class="sidenav">
-            <h3 class="ml-5">Scheduling</h3>
+            <h3 class="ml-5 blue">Scheduling</h3>
             <a href="javascript:void(0)" class="close-btn" onclick="closeAdminNav()">&times;</a>
             <br />
-            <a href="@Url.Action("Index", "Enrollments")">Enrollments</a> @* ADMIN AND SCHEDULING *@
-            <a href="@Url.Action("Index", "Students")">Students</a> @* ADMIN AND SCHEDULE *@
-            <a href="@Url.Action("Index", "ScheduledClasses")">Classes</a> @* SCHEDULING AND ADMIN *@
+            <a href="@Url.Action("Index", "Enrollments")"><i class="fas fa-user-plus"></i> Enrollments</a> @* ADMIN AND SCHEDULING *@
+            <a href="@Url.Action("Index", "Students")"><i class="fas fa-user-graduate"></i> Students</a> @* ADMIN AND SCHEDULE *@
+            <a href="@Url.Action("Index", "ScheduledClasses")"><i class="fas fa-apple-alt"></i> Classes</a> @* SCHEDULING AND ADMIN *@
         </div>
     }
 
