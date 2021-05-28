@@ -159,12 +159,15 @@ namespace SAT.DATA.EF
         [Range(0,int.MaxValue)]
         [Required(ErrorMessage = "* SCSID is required")]
         public int SCSID { get; set; }
+
+
+
     }
 
     [MetadataType(typeof(ScheduledClassMetadata))]
     public partial class ScheduledClass
     {
-        public string Desc { get { return StartDate + ", " + CourseId + ", " + Location + ". "; } }
+        public string Description { get { return StartDate.ToShortDateString() + ", " + InstructorName + ", " + Location + ". "; } }
     }
 
     public class EnrollmentMetadata
@@ -186,13 +189,6 @@ namespace SAT.DATA.EF
         [Display(Name = "Enrollment Date")]
         public System.DateTime EnrollmentDate { get; set; }
 
-        [Range(0, int.MaxValue)]
-        [Required(ErrorMessage = "Scheduled Class is required")]
-        public virtual ScheduledClass ScheduledClass { get; set; }
-
-        [Required]
-        public virtual Student Student { get; set; }
-
     }
 
     [MetadataType(typeof(EnrollmentMetadata))]
@@ -206,8 +202,12 @@ namespace SAT.DATA.EF
         public int SCSID { get; set; }
 
         [StringLength(50, ErrorMessage = "value must be 50 characters or less")]
-        [Required(ErrorMessage = "* Student class status is required")]
-        [Display(Name = "Student Class Status Name")]
+        [Required(ErrorMessage = "* Scheduled class status is required")]
+        [Display(Name = "Class Status")]
         public string SCSName { get; set; }
     }
+
+    [MetadataType(typeof(ScheduledClassStatusMetadata))]
+    public partial class ScheduledClassStatus
+    { }
 }

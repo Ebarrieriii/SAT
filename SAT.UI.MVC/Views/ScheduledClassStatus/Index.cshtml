@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<SAT.DATA.EF.ScheduledClassStatus>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Class Status";
 }
 
-<h2>Index</h2>
+@Html.Partial("_BannerPartial")
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New", "Create", null, new { @class = "mt-2 btn btn-primary" })
 </p>
 <table class="table">
     <tr>
@@ -23,9 +23,17 @@
             @Html.DisplayFor(modelItem => item.SCSName)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.SCSID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.SCSID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.SCSID })
+            <a href="@Url.Action("Edit", "ScheduledClassStatus", new { id=item.SCSID })"><i class="fas fa-edit"></i></a>
+
+            <br />
+
+            <a href="@Url.Action("Details", "ScheduledClassStatus", new { id=item.SCSID })"><i class="fas fa-info-circle"></i></a>
+
+            <br />
+
+            <a href="@Url.Action("Delete", "ScheduledClassStatus", new { id=item.SCSID })">
+                <i class="fas fa-trash-alt"></i>
+            </a>
         </td>
     </tr>
 }

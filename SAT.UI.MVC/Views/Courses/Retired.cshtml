@@ -1,0 +1,71 @@
+﻿@model IEnumerable<SAT.DATA.EF.Course>
+
+@{
+    ViewBag.Title = "Retired Courses";
+}
+
+@Html.Partial("_BannerPartial")
+
+<p>
+    @Html.ActionLink("Active Courses", "Active", null, new { @class = "mt-2 btn btn-primary" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CourseName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CourseDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreditHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Curriculum)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Notes)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsActive)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CourseName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CourseDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreditHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Curriculum)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Notes)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsActive)
+        </td>
+        <td>
+            <a href="@Url.Action("Edit", "Courses", new { id=item.CourseId })"><i class="fas fa-edit"></i></a>
+
+            <br />
+
+            <a href="@Url.Action("Details", "Courses", new { id=item.CourseId })"><i class="fas fa-info-circle"></i></a>
+
+            <br />
+
+            <a href="@Url.Action("Delete", "Courses", new { id=item.CourseId })">
+                <i class="fas fa-trash-alt"></i>
+            </a>
+        </td>
+    </tr>
+}
+
+</table>

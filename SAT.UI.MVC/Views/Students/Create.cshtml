@@ -90,8 +90,10 @@
         <div class="form-group">
             @Html.LabelFor(model => model.PhotoUrl, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.PhotoUrl, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.PhotoUrl, "", new { @class = "text-danger" })
+                @*@Html.EditorFor(model => model.PhotoUrl, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.PhotoUrl, "", new { @class = "text-danger" })*@
+
+                No Images Taller than 350px: <input type="file" style="display:inline" name="logo" />
             </div>
         </div>
 

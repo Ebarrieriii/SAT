@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<SAT.DATA.EF.ScheduledClass>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Classes";
 }
 
 @Html.Partial("_BannerPartial")
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New", "Create", null, new {@class = "mt-2 btn btn-primary"})
 </p>
 <table class="table">
     <tr>
@@ -24,7 +24,7 @@
             @Html.DisplayNameFor(model => model.Location)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Cours.CourseName)
+            @Html.DisplayNameFor(model => model.Course.CourseName)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.ScheduledClassStatus.SCSName)
@@ -47,17 +47,24 @@
             @Html.DisplayFor(modelItem => item.Location)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Cours.CourseName)
+            @Html.DisplayFor(modelItem => item.Course.CourseName)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.ScheduledClassStatus.SCSName)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ScheduledClassId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ScheduledClassId }) |
+            <a href="@Url.Action("Edit", "ScheduledClasses", new { id=item.ScheduledClassId })"><i class="fas fa-edit"></i></a>
+
+            <br />
+
+            <a href="@Url.Action("Details", "ScheduledClasses", new { id=item.ScheduledClassId })"><i class="fas fa-info-circle"></i></a>
+
+            <br />
             @if (Request.IsAuthenticated && User.IsInRole("Admin"))
             {
-            @Html.ActionLink("Delete", "Delete", new { id=item.ScheduledClassId })
+                <a href="@Url.Action("Delete", "ScheduledClasses", new { id=item.ScheduledClassId })">
+                    <i class="fas fa-trash-alt"></i>
+                </a>
             }
         </td>
     </tr>

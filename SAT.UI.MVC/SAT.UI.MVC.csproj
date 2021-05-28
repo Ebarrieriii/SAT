@@ -189,6 +189,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="Utilities\ImageUtility.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\assets\css\custom.css" />
@@ -221,7 +222,9 @@
     <Content Include="Content\assets\img\comments-4.jpg" />
     <Content Include="Content\assets\img\comments-5.jpg" />
     <Content Include="Content\assets\img\comments-6.jpg" />
+    <Content Include="Content\assets\img\favicon-32x32.png" />
     <Content Include="Content\assets\img\favicon.png" />
+    <Content Include="Content\assets\img\tech.jpg" />
     <Content Include="Content\assets\img\portfolio\portfolio-1.jpg" />
     <Content Include="Content\assets\img\portfolio\portfolio-2.jpg" />
     <Content Include="Content\assets\img\portfolio\portfolio-3.jpg" />
@@ -237,6 +240,7 @@
     <Content Include="Content\assets\img\slide\slide-1.jpg" />
     <Content Include="Content\assets\img\slide\slide-2.jpg" />
     <Content Include="Content\assets\img\slide\slide-3.jpg" />
+    <Content Include="Content\assets\img\students\noImage.png" />
     <Content Include="Content\assets\img\team\team-1.jpg" />
     <Content Include="Content\assets\img\team\team-2.jpg" />
     <Content Include="Content\assets\img\team\team-3.jpg" />
@@ -549,7 +553,8 @@
     <Content Include="Views\Enrollments\Index.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\EmailConfirmation.cshtml" />
-    <Content Include="Views\StudentStatus\SSGrid.cshtml" />
+    <Content Include="Views\Courses\Active.cshtml" />
+    <Content Include="Views\Courses\Retired.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

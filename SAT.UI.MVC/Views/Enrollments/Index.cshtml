@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<SAT.DATA.EF.Enrollment>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Enrollments";
 }
 
 @Html.Partial("_BannerPartial")
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New", "Create", null, new { @class = "mt-2 btn btn-primary"})
 </p>
 <table class="table">
     <tr>
@@ -15,7 +15,7 @@
             @Html.DisplayNameFor(model => model.EnrollmentDate)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ScheduledClass.Desc)
+            @Html.DisplayNameFor(model => model.ScheduledClass.Description)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Student.FirstName)
@@ -29,15 +29,23 @@
             @Html.DisplayFor(modelItem => item.EnrollmentDate)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.ScheduledClass.Desc)
+            @Html.DisplayFor(modelItem => item.ScheduledClass.Description)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Student.FirstName)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.EnrollmentId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.EnrollmentId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.EnrollmentId })
+            <a href="@Url.Action("Edit", "Enrollments", new { id=item.EnrollmentId })"><i class="fas fa-edit"></i></a>
+
+            <br />
+
+            <a href="@Url.Action("Details", "Enrollments", new { id=item.EnrollmentId })"><i class="fas fa-info-circle"></i></a>
+
+            <br />
+
+            <a href="@Url.Action("Delete", "Enrollments", new { id=item.EnrollmentId })">
+                <i class="fas fa-trash-alt"></i>
+            </a>
         </td>
     </tr>
 }

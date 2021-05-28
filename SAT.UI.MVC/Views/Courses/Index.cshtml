@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<SAT.DATA.EF.Course>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Courses";
 }
 
-<h2>Index</h2>
+@Html.Partial("_BannerPartial")
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary mt-3" })
 </p>
 <table class="table">
     <tr>
@@ -32,32 +32,41 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.CourseName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CourseDescription)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CreditHours)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Curriculum)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Notes)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IsActive)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.CourseId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.CourseId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.CourseId })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CourseName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CourseDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreditHours)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Curriculum)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Notes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsActive)
+            </td>
+            <td>
+                <a href="@Url.Action("Edit", "Courses", new { id=item.CourseId })"><i class="fas fa-edit"></i></a>
+
+                <br />
+
+                <a href="@Url.Action("Details", "Courses", new { id=item.CourseId })"><i class="fas fa-info-circle"></i></a>
+
+                <br />
+
+                <a href="@Url.Action("Delete", "Courses", new { id=item.CourseId })">
+                    <i class="fas fa-trash-alt"></i>
+                </a>
+            </td>
+        </tr>
+    }
 
 </table>

@@ -15,10 +15,24 @@ namespace SAT.UI.MVC.Controllers
         private SATEntities db = new SATEntities();
 
         // GET: Courses
-        public ActionResult Index()
+        //public ActionResult Index()
+        //{
+        //    return View(db.Courses.ToList());
+        //}
+
+        public ActionResult Active()
         {
-            return View(db.Courses.ToList());
+            var activeCourses = db.Courses.Where(x => x.IsActive).ToList();
+            return View(activeCourses);
         }
+
+        public ActionResult Retired()
+        {
+            var retiredCourses = db.Courses.Where(x => !x.IsActive).ToList();
+            return View(retiredCourses);
+        }
+
+
 
         // GET: Courses/Details/5
         public ActionResult Details(int? id)
@@ -52,7 +66,7 @@ namespace SAT.UI.MVC.Controllers
             {
                 db.Courses.Add(course);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Active");
             }
 
             return View(course);
@@ -84,7 +98,7 @@ namespace SAT.UI.MVC.Controllers
             {
                 db.Entry(course).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Active");
             }
             return View(course);
         }
@@ -112,7 +126,7 @@ namespace SAT.UI.MVC.Controllers
             Course course = db.Courses.Find(id);
             db.Courses.Remove(course);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Active");
         }
 
         protected override void Dispose(bool disposing)

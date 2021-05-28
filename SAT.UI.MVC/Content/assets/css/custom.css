@@ -3,7 +3,7 @@
     height: 100%;
     top: 0;
     left: 0;
-    background-color: rgba(0,0,0,.9);
+    background-color: rgba(0,0,0,.7);
     z-index: 1030;
     width: 0;
     overflow-x: hidden;
@@ -35,7 +35,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    background-color: rgba(0,0,0,.9);
+    background-color: rgba(0,0,0,.7);
     height: 100%;
     width: 20px;
     z-index: 1030;
@@ -54,5 +54,9 @@
 
 
 a.active {
-    color: #1bbd36;
+    color: #325788;
+}
+
+.blue {
+    color: #325788;
 }

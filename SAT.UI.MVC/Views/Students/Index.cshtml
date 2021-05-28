@@ -8,7 +8,7 @@
 @if (Request.IsAuthenticated && User.IsInRole("Admin"))
 {
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New", "Create", null, new { @class = "mt-2 btn btn-primary"})
 </p>
 }
 <table class="table">
@@ -72,17 +72,26 @@
                 @Html.DisplayFor(modelItem => item.Email)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.PhotoUrl)
+                @*@Html.DisplayFor(modelItem => item.PhotoUrl)*@
+                <img src="~/Content/assets/img/students/t_@item.PhotoUrl" alt="@item.FirstName" />
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.StudentStatus.SSName)
             </td>
             <td>
-                @Html.ActionLink("Details", "Details", new { id = item.StudentId }) |
+                <a href="@Url.Action("Edit", "Courses", new { id=item.StudentId })"><i class="fas fa-edit"></i></a>
+
+                <br />
+
                 @if (Request.IsAuthenticated && User.IsInRole("Admin"))
                 {
-                @Html.ActionLink("Edit", "Edit", new { id = item.StudentId }) 
-                @Html.ActionLink("Delete", "Delete", new { id = item.StudentId })
+                    <a href="@Url.Action("Details", "Students", new { id=item.StudentId })"><i class="fas fa-info-circle"></i></a>
+
+                    <br />
+
+                    <a href="@Url.Action("Delete", "Students", new { id=item.StudentId })">
+                        <i class="fas fa-trash-alt"></i>
+                    </a>
                 }
             </td>
         </tr>
